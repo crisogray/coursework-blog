@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %} {% block content %}
+<h2>New CV Entry</h2>
+<h4>Sections:</h4>
+<ol start="0">
+	<li>Bio (Overwrites)</li>
+	<li>Education</li>
+	<li>Work Experience</li>
+	<li>Additional Skills/Achievements</li>
+	<li>Interests</li>
+	<li>Miscellaneous</li>
+</ol>
+<p>Enter Integer in Section Field</p>
+<form method="POST" class="post-form">
+	{% csrf_token %} {{ form.as_p }}
+	<button type="submit" class="save btn btn-default">Save</button>
+</form>
+{% endblock %}
