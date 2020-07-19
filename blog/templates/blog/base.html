@@ -2,25 +2,22 @@
 <html>
 	<head>
 		<title>Ben Gray's Django Coursework Blog</title>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
-		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://unpkg.com/wingcss" />
 		<link rel="stylesheet" href="{% static 'css/blog.css' %}" />
 	</head>
 	<body>
-		<div class="page-header">
-			{% if user.is_authenticated %}
-			<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-			<a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
-			{% endif %}
-			<h1><a href="/">Django Girls Blog</a></h1>
-		</div>
-		<div class="content container">
-			<div class="row">
-				<div class="col-md-8">
-					{% block content %} {% endblock %}
-				</div>
+		<div class="container">
+			<div class="nav">
+				<div class="nav-logo"><a class="nav-home" href="{% url 'post_list' %}">Ben Gray's CS Blog</a></div>
+				<div class="nav-item"><a href="{% url 'post_list' %}">Posts</a></div>
+				<div class="nav-item"><a href="{% url 'cv' %}">CV</a></div>
+				{% if user.is_authenticated %}
+				<div class="nav-item"><a href="{% url 'post_new' %}">New Post</a></div>
+				<div class="nav-item"><a href="{% url 'post_draft_list' %}">Drafts</a></div>
+				<div class="nav-item"><a href="{% url 'cv_new' %}">Edit CV</a></div>
+				{% endif %}
 			</div>
+			{% block content %} {% endblock %}
 		</div>
 	</body>
 </html>
