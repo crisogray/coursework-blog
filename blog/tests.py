@@ -1,7 +1,7 @@
 from django.urls import resolve
 from django.test import TestCase
 from django.http import HttpRequest
-from blog.views import post_list, cv_page, cv_new
+from blog.views import post_list, cv, cv_new
 
 # Create your tests here.
 
@@ -12,7 +12,7 @@ class CVTest(TestCase):
     def test_cv_page_displays_correct_sections(self):
         # Name, Bio, Sections
         request = HttpRequest()
-        response = cv_page(request)
+        response = cv(request)
         html = response.content.decode('utf8').strip()
         self.assertTrue(html.startswith('<html>'))
         self.assertIn('<title>Ben Gray\'s Django Coursework Blog</title>',

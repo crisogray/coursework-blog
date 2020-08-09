@@ -63,7 +63,7 @@ def post_remove(request, pk):
     return redirect('post_list')
 
 
-def cv_page(request):
+def cv(request):
     bio = CVEntry.objects.filter(section=0)
     education = CVEntry.objects.filter(section=1).filter(
         published_date__lte=timezone.now()).order_by('-published_date')
