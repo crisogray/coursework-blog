@@ -9,6 +9,6 @@ urlpatterns = [
     path('drafts/', views.post_draft_list, name='post_draft_list'),
     path('post/<pk>/publish/', views.post_publish, name='post_publish'),
     path('post/<pk>/remove/', views.post_remove, name='post_remove'),
-    path('cv/', views.cv_page, name='cv_page'),
-    path('cv/new', views.cv_new, name='cv_new')
+    path('cv/new', views.cv_new, name='cv_new'),
+    path('cv/', views.cv_page, name='cv_page')
 ]
