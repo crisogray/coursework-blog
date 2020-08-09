@@ -10,6 +10,7 @@
 			<div class="nav">
 				<div class="nav-logo"><a class="nav-home" href="{% url 'post_list' %}">Ben Gray's CS Blog</a></div>
 				<div class="nav-item"><a href="{% url 'post_list' %}">Posts</a></div>
+				<div class="nav-item"><a href="{% url 'post_list' %}">CV</a></div>
 				{% if user.is_authenticated %}
 				<div class="nav-item"><a href="{% url 'post_new' %}">New Post</a></div>
 				<div class="nav-item"><a href="{% url 'post_draft_list' %}">Drafts</a></div>
